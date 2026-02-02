@@ -66,7 +66,7 @@ This user will be used to demonstrate monitored database access.
    SELECT FullName, PhoneNumber, EmailAddress
    FROM Application.People;
    ```
-or
+   or
    ```sql
    SELECT TOP 10 *
    FROM Sales.Orders
