@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  mamori:
+    image: iomamori/mamori-all-in-one:latest
+    container_name: mamori
+    network_mode: host
+    privileged: true
+    restart: always
+    command: /sbin/my_init
+
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      - mamori-var:/opt/mamori/var
+      - mamori-nginx-conf:/etc/nginx
+      - mamori-data:/var/lib/postgresql
+      - mamori-pg-conf:/etc/postgresql
+      - mamori-influxdb:/opt/mamori/influxdb
+      - mamori-influxdb-data:/var/lib/influxdb
+      - mamori-grafana:/opt/mamori/grafana
+      - /proc:/host/proc:ro
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+volumes:
+  mamori-var:
+  mamori-nginx-conf:
+  mamori-data:
+  mamori-pg-conf:
+  mamori-influxdb:
+  mamori-influxdb-data:
+  mamori-grafana:
