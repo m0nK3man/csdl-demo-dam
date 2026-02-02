@@ -36,7 +36,7 @@ Before starting, ensure the following components are already running:
    **Users → Add New User**
 
 2. In the **General** tab:
-   - Assign appropriate roles, for example:
+   - Assign appropriate roles:
      - `default_database_credentials`
      - `default_database_access_ro`
 
