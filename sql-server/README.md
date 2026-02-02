@@ -180,36 +180,11 @@ WideWorldImporters | ONLINE
 ## 10. Connection Details (for DAM / Tools)
 
 * **Host:** Docker host IP or `localhost`
-* **Port:** 1433
+* **Port:** 14330
 * **Username:** SA
 * **Password:** YourStrong!Passw0rd
-* **Encryption:** Required
-* **Trust Server Certificate:** Yes
 
----
-
-## 11. Typical DAM Demo Activities
-
-This database is well-suited for:
-
-* Login auditing
-* SELECT / INSERT / UPDATE / DELETE monitoring
-* Privileged user activity (SA)
-* Application-style workloads (Orders, Invoices, StockItems)
-
----
-
-## 12. Cleanup
-
-Stop and remove environment:
-
-```bash
-docker compose down -v
-```
-
----
-
-## 13. Notes
+## 11. Notes
 
 * This setup is **not production-hardened**
 * TLS is trusted, not validated
