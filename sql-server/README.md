@@ -36,25 +36,22 @@ DAM-demo/
 Create `docker-compose.yml`:
 
 ```yaml
-version: '3.8'
+version: "3.8"
 
 services:
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: wwi-sqlserver
+    ports:
+      - "14330:1433"
     environment:
       ACCEPT_EULA: "Y"
-      SA_PASSWORD: "YourStrong!Passw0rd"
-      MSSQL_PID: "Developer"
-      TZ: "UTC"
-    ports:
-      - "1433:1433"
+      MSSQL_SA_PASSWORD: "YourStrong!Passw0rd"
     volumes:
-      - mssql-data:/var/opt/mssql
-    restart: unless-stopped
+      - sqlserver-data:/var/opt/mssql
 
 volumes:
-  mssql-data:
+  sqlserver-data:
 ```
 
 Start the container:
