@@ -1,0 +1,23 @@
+services:
+  mamori:
+    extends:
+      file: ./mamori/docker-compose.yml
+      service: mamori
+
+  sqlserver:
+    extends:
+      file: ./sql-server/docker-compose.yml
+      service: sqlserver
+
+volumes:
+  # Mamori volumes
+  mamori-var:
+  mamori-nginx-conf:
+  mamori-data:
+  mamori-pg-conf:
+  mamori-influxdb:
+  mamori-influxdb-data:
+  mamori-grafana:
+
+  # SQL Server volume
+  sqlserver-data:
